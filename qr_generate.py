@@ -6,10 +6,10 @@ import qrcode
 #Read in the csv file containing all unique barcodes we need.
 df = pd.read_csv('qr_generate.csv')
 
-
+print(df.shape)
 """
-There are 6 Columns, each column needs to be looped and saved into a folder
-to generate a unique QR code for each row.
+#There are 6 Columns, each column needs to be looped and saved into a folder
+#to generate a unique QR code for each row.
 
 """
 
@@ -27,7 +27,7 @@ for column in df.columns:
 
     # For each unique value in the column, generate a QR code
     for value in df[column].unique():
-        if pd.isna(value):
+        if pd.isna(value): #replace nan with empty string
             continue
         qr = qrcode.QRCode(
             version=4,

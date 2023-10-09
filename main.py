@@ -57,5 +57,3 @@ try:
 
 except KeyboardInterrupt:
     print("\nLogging ended.")
-
-
